@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket  = "taxi-rides-ny-412407-terraform-backend"
-    prefix  = "dev"
+    bucket = "taxi-rides-ny-412407-terraform-backend"
+    prefix = "dev"
   }
 }
 
@@ -17,12 +17,22 @@ provider "google" {
   region      = var.region
 }
 
-resource "google_bigquery_dataset" "prod_dataset" {
-  dataset_id = var.bq_dataset_prod
+resource "google_bigquery_dataset" "bronze_dataset" {
+  dataset_id = var.bq_dataset_bronze
   location   = var.location
 }
 
-resource "google_storage_bucket" "prod-bucket" {
+resource "google_bigquery_dataset" "silver_dataset" {
+  dataset_id = var.bq_dataset_silver
+  location   = var.location
+}
+
+resource "google_bigquery_dataset" "gold_dataset" {
+  dataset_id = var.bq_dataset_gold
+  location   = var.location
+}
+
+resource "google_storage_bucket" "data-lake-bucket" {
   name                     = var.gcs_bucket_name
   location                 = var.location
   force_destroy            = true
