@@ -5,10 +5,6 @@ terraform {
       version = "5.6.0"
     }
   }
-  backend "gcs" {
-    bucket = "taxi-rides-ny-412407-terraform-backend"
-    prefix = "dev"
-  }
 }
 
 provider "google" {
