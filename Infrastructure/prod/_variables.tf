@@ -1,6 +1,6 @@
 variable "credentials" {
   description = "My Credentials"
-  default     = "../.keys/taxi-rides-ny-412407-d5f6d54a82a5.json"
+  default     = "/tmp/google/google-service-account.json"
   #ex: if you have a directory where this file is called keys with your service account json file
   #saved there as my-creds.json you could use default = "./keys/my-creds.json"
 }
