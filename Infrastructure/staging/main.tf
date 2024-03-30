@@ -7,7 +7,7 @@ terraform {
   }
   backend "gcs" {
     bucket = "taxi-rides-ny-412407-terraform-backend"
-    prefix = "staging_"
+    prefix = "staging_backend/"
   }
 }
 
