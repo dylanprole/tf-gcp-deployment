@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 90
     permissions:
       pull-requests: write
-      
+
     steps:
       # Prep Google keyfile
       - run: mkdir -p "$(dirname $GOOGLE_APPLICATION_CREDENTIALS)"
