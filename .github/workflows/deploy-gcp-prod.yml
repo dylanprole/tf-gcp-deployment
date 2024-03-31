@@ -52,7 +52,3 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: terraform -chdir=./Infrastructure/prod apply -auto-approve
-
-      - name: Terraform Destroy
-        id: destroy
-        run: terraform -chdir=./Infrastructure/prod destroy -auto-approve
